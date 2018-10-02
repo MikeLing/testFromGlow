@@ -1,0 +1,34 @@
+{
+  "taskInfo": [
+    {
+      "type": "pyfunc",
+      "name": "test_pyfunc",
+      "call": "module.test:testfunc",
+      "args": [
+        "arg_a",
+        "arg_b"
+      ],
+      "kwargs": {
+        "kw_a": "a",
+        "kw_b": "b"
+      },
+      "alert": [
+        "a@a.com",
+        "b@b.com"
+      ],
+      "timeout": 30
+    },
+    {
+      "type": "shell",
+      "name": "test_shellfunc",
+      "cmd": "ls -lh",
+      "alert": [
+        "a@.com"
+      ],
+      "timeout": 10,
+      "deps": [
+        "test_pyfunc"
+      ]
+    }
+  ]
+}
